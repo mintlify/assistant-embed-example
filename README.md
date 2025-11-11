@@ -39,15 +39,15 @@ See [Tutorial: Build an in-app documentation assistant](https://wwww.mintlify.co
 ├── src/
 │   ├── components/
 │   │   └── AssistantWidget.jsx    # The reusable widget component (copy to your project)
-│   ├── App.jsx                    # Example app with widget integration
-│   ├── App.css                    # App styles
+│   ├── App.css                    # App stylesintegration
+│   ├── App.jsx                    # Example app with widget 
 │   ├── index.css                  # Global styles (includes Tailwind imports)
 │   └── main.jsx                   # React entry point
 ├── .env.example                   # Template for environment variables
-├── vite.config.js                 # Vite configuration
-├── package.json                   # Dependencies and scripts
 ├── index.html                     # HTML entry point
-└── README.md                      # This file
+├── package.json                   # Dependencies and scripts
+├── README.md                      # This file
+└── vite.config.js                 # Vite configuration
 ```
 
 ## Key files to customize
