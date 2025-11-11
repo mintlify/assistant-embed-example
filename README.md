@@ -17,7 +17,7 @@ See [Tutorial: Build an in-app documentation assistant](https://wwww.mintlify.co
    ```
    Edit `.env` and replace `mint_dsc_your_token_here` with your actual token from the [Mintlify dashboard](https://dashboard.mintlify.com/settings/organization/api-keys).
 
-3. Update `src/App.jsx` with your Mintlify project details:
+3. Update `src/config.js` with your Mintlify project details:
    - Replace `domain="your-domain"` with your project domain (the last part of your dashboard URL `https://dashboard.mintlify.com/org-name/your-domain`).
    - Replace `docsURL="https://yourdocs.mintlify.app"` with your documentation site URL.
 
