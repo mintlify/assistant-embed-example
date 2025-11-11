@@ -1,4 +1,5 @@
 import { AssistantWidget } from './components/AssistantWidget';
+import { ASSISTANT_CONFIG } from './config';
 import './App.css';
 
 function App() {
@@ -17,8 +18,8 @@ function App() {
           <ol className="list-decimal list-inside space-y-2 text-gray-700">
             <li>Create a <code className="bg-gray-100 px-2 py-1 rounded">.env</code> file in the root directory</li>
             <li>Add your assistant API token: <code className="bg-gray-100 px-2 py-1 rounded">VITE_MINTLIFY_TOKEN=mint_dsc_your_token_here</code></li>
-            <li>Update the domain in <code className="bg-gray-100 px-2 py-1 rounded">App.jsx</code> (for example, "your-domain" from "dashboard.mintlify.com/org-name/your-domain")</li>
-            <li>Update the docsURL in <code className="bg-gray-100 px-2 py-1 rounded">App.jsx</code> (for example, "https://your-site.com/docs")</li>
+            <li>Update the domain in <code className="bg-gray-100 px-2 py-1 rounded">src/config.js</code></li>
+            <li>Update the docsURL in <code className="bg-gray-100 px-2 py-1 rounded">src/config.js</code></li>
             <li>Run <code className="bg-gray-100 px-2 py-1 rounded">npm install</code> and <code className="bg-gray-100 px-2 py-1 rounded">npm run dev</code></li>
           </ol>
         </div>
@@ -34,8 +35,7 @@ function App() {
         </div>
       </div>
 
-      {/* Replace with your actual domain and docs URL */}
-      <AssistantWidget domain="your-domain" docsURL="https://yourdocs.mintlify.app" position="bottom-right" />
+      <AssistantWidget {...ASSISTANT_CONFIG} />
     </div>
   );
 }
