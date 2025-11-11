@@ -18,8 +18,8 @@ See [Tutorial: Build an in-app documentation assistant](https://wwww.mintlify.co
    Edit `.env` and replace `mint_dsc_your_token_here` with your actual token from the [Mintlify dashboard](https://dashboard.mintlify.com/settings/organization/api-keys).
 
 3. Update `src/config.js` with your Mintlify project details:
-   - Replace `domain="your-domain"` with your project domain (the last part of your dashboard URL `https://dashboard.mintlify.com/org-name/your-domain`).
-   - Replace `docsURL="https://yourdocs.mintlify.app"` with your documentation site URL.
+   - Replace `domain: 'your-domain'` with your project domain (the last part of your dashboard URL `https://dashboard.mintlify.com/org-name/your-domain`).
+   - Replace `docsURL: 'https://yourdocs.mintlify.app'` with your documentation site URL.
 
 4. Start the development server:
    ```bash
@@ -36,22 +36,20 @@ See [Tutorial: Build an in-app documentation assistant](https://wwww.mintlify.co
 ## Project structure
 
 ```
-├── src/
-│   ├── components/
-│   │   └── AssistantWidget.jsx    # The reusable widget component (copy to your project)
-│   ├── App.css                    # App stylesintegration
-│   ├── App.jsx                    # Example app with widget 
-│   ├── index.css                  # Global styles (includes Tailwind imports)
-│   └── main.jsx                   # React entry point
-├── .env.example                   # Template for environment variables
-├── index.html                     # HTML entry point
-├── package.json                   # Dependencies and scripts
-├── README.md                      # This file
-└── vite.config.js                 # Vite configuration
+src/
+├── App.css                 # App styles
+├── App.jsx                 # Main app component
+├── config.js               # Configuration (domain and docsURL)
+├── index.css               # Global styles
+├── main.jsx                # React entry point
+├── utils.js                # Helper functions for parsing suggestions and extracting sources
+└── components/
+    ├── AssistantWidget.jsx # Main widget component with chat state and API logic
+    └── Message.jsx         # Individual message component for rendering user and assistant messages
 ```
 
 ## Key files to customize
 
-- **`src/components/AssistantWidget.jsx`** - Copy this component into your project and reuse it
-- **`src/App.jsx`** - Update `domain` and `docsURL` props with your Mintlify project details
+- **`src/config.js`** - Update your Mintlify project domain and documentation URL
+- **`src/components/AssistantWidget.jsx`** - Customize widget styling or behavior
 - **`.env`** - Add your assistant API token (not committed to git)
