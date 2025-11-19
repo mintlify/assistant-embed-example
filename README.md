@@ -4,6 +4,16 @@ A working example of embedding the Mintlify assistant widget into a Vite app. Th
 
 See [Tutorial: Build an in-app documentation assistant](https://wwww.mintlify.com/docs/guides/assistant-embed) or step-by-step instructions to embed and customize the widget.
 
+## AI SDK version requirements
+
+This example uses Vercel AI SDK v4. If you upgrade to AI SDK v5, the `useChat` hook has significant breaking changes that require code updates:
+
+- The `streamProtocol: 'data'` parameter is removed
+- Message types have changed (UIMessage vs ModelMessage)
+- Tool invocation handling has been redesigned
+
+If you use AI SDK v5, refactor the `AssistantWidget.jsx` component to match the new API. For details on migrating to v5, see the [AI SDK migration guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0).
+
 ## Setup
 
 1. Install dependencies:
