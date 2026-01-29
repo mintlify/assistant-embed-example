@@ -1,6 +1,6 @@
 # Mintlify assistant embed example
 
-A working example of embedding the Mintlify assistant widget into a Vite app. This example demonstrates how to integrate the assistant via the API.
+A working example of embedding the Mintlify assistant widget into a Next.js app. This example demonstrates how to integrate the assistant via the API.
 
 See [Tutorial: Build an in-app documentation assistant](https://wwww.mintlify.com/docs/guides/assistant-embed) or step-by-step instructions to embed and customize the widget.
 
@@ -21,11 +21,11 @@ If you use AI SDK v5, refactor the `AssistantWidget.jsx` component to match the 
    npm install
    ```
 
-2. Copy `.env.example` to `.env` and add your Mintlify assistant API token:
+2. Copy `.env.example` to `.env.local` and add your Mintlify assistant API token:
    ```bash
-   cp .env.example .env
+   cp .env.example .env.local
    ```
-   Edit `.env` and replace `mint_dsc_your_token_here` with your actual token from the [Mintlify dashboard](https://dashboard.mintlify.com/settings/organization/api-keys).
+   Edit `.env.local` and replace `mint_dsc_your_token_here` with your actual token from the [Mintlify dashboard](https://dashboard.mintlify.com/settings/organization/api-keys).
 
 3. Update `src/config.js` with your Mintlify project details:
    - Replace `domain: 'your-domain'` with your project domain (the last part of your dashboard URL `https://dashboard.mintlify.com/org-name/your-domain`).
@@ -36,7 +36,7 @@ If you use AI SDK v5, refactor the `AssistantWidget.jsx` component to match the 
    npm run dev
    ```
 
-5. Open the URL shown in your terminal (usually `http://localhost:5173`)
+5. Open the URL shown in your terminal (usually `http://localhost:3000`)
 
 ## Testing
 
@@ -47,12 +47,12 @@ If you use AI SDK v5, refactor the `AssistantWidget.jsx` component to match the 
 
 ```
 src/
-├── App.css                 # App styles
-├── App.jsx                 # Main app component
-├── config.js               # Configuration (domain and docsURL)
-├── index.css               # Global styles
-├── main.jsx                # React entry point
-├── utils.js                # Helper functions for parsing suggestions and extracting sources
+├── app/
+│   ├── globals.css       # Global styles (Tailwind)
+│   ├── layout.jsx        # Root layout
+│   └── page.jsx          # Home page
+├── config.js             # Configuration (domain and docsURL)
+├── utils.js              # Helper functions for parsing suggestions and extracting sources
 └── components/
     ├── AssistantWidget.jsx # Main widget component with chat state and API logic
     └── Message.jsx         # Individual message component for rendering user and assistant messages
@@ -62,4 +62,4 @@ src/
 
 - **`src/config.js`** - Update your Mintlify project domain and documentation URL
 - **`src/components/AssistantWidget.jsx`** - Customize widget styling or behavior
-- **`.env`** - Add your assistant API token (not committed to git)
+- **`.env.local`** - Add your assistant API token (not committed to git)
