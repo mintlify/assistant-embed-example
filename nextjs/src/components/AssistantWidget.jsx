@@ -4,13 +4,13 @@ import { useChat } from '@ai-sdk/react';
 import { useState } from 'react';
 import { Message } from './Message';
 
-export function AssistantWidget({ domain, docsURL }) {
+export function AssistantWidget({ domain, docsURL, token }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
     api: `https://api-dsc.mintlify.com/v1/assistant/${domain}/message`,
     headers: {
-      'Authorization': `Bearer ${process.env.NEXT_PUBLIC_MINTLIFY_TOKEN}`,
+      'Authorization': `Bearer ${token}`,
     },
     body: {
       fp: 'anonymous',
