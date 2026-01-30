@@ -1,7 +1,7 @@
-import { AssistantWidget } from '../components/AssistantWidget';
-import { ASSISTANT_CONFIG } from '../config';
+import { AssistantWidget } from './components/AssistantWidget';
+import { ASSISTANT_CONFIG } from './config';
 
-export default function Home() {
+function App() {
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-4xl mx-auto">
@@ -15,10 +15,9 @@ export default function Home() {
         <div className="bg-white rounded-lg shadow p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Setup instructions</h2>
           <ol className="list-decimal list-inside space-y-2 text-gray-700">
-            <li>Create a <code className="bg-gray-100 px-2 py-1 rounded">.env.local</code> file in the root directory</li>
-            <li>Add your assistant API token: <code className="bg-gray-100 px-2 py-1 rounded">NEXT_PUBLIC_MINTLIFY_TOKEN=mint_dsc_your_token_here</code></li>
-            <li>Update the domain in <code className="bg-gray-100 px-2 py-1 rounded">src/config.js</code></li>
-            <li>Update the docsURL in <code className="bg-gray-100 px-2 py-1 rounded">src/config.js</code></li>
+            <li>Create a <code className="bg-gray-100 px-2 py-1 rounded">.env</code> in this directory (<code className="bg-gray-100 px-2 py-1 rounded">vite/</code>)</li>
+            <li>Add your assistant API token: <code className="bg-gray-100 px-2 py-1 rounded">VITE_MINTLIFY_TOKEN=mint_dsc_your_token_here</code></li>
+            <li>Update the domain and docsURL in <code className="bg-gray-100 px-2 py-1 rounded">src/config.js</code></li>
             <li>Run <code className="bg-gray-100 px-2 py-1 rounded">npm install</code> and <code className="bg-gray-100 px-2 py-1 rounded">npm run dev</code></li>
           </ol>
         </div>
@@ -38,3 +37,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default App;

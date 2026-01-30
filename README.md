@@ -1,65 +1,45 @@
 # Mintlify assistant embed example
 
-A working example of embedding the Mintlify assistant widget into a Next.js app. This example demonstrates how to integrate the assistant via the API.
+Working examples of embedding the Mintlify assistant widget: one using **Vite**, one using **Next.js**. Each demonstrates how to integrate the assistant via the API.
 
-See [Tutorial: Build an in-app documentation assistant](https://wwww.mintlify.com/docs/guides/assistant-embed) or step-by-step instructions to embed and customize the widget.
+See [Tutorial: Build an in-app documentation assistant](https://wwww.mintlify.com/docs/guides/assistant-embed) for step-by-step instructions to embed and customize the widget.
 
-## AI SDK version requirements
+## Choose an example
 
-This example uses Vercel AI SDK v4. If you upgrade to AI SDK v5, the `useChat` hook has significant breaking changes that require code updates:
+| Framework | Directory | Dev server |
+|-----------|------------|------------|
+| **Vite**  | `vite/`    | `http://localhost:5173` |
+| **Next.js** | `nextjs/` | `http://localhost:3000` |
 
-- The `streamProtocol: 'data'` parameter is removed
-- Message types have changed (UIMessage vs ModelMessage)
-- Tool invocation handling has been redesigned
+## Setup (either example)
 
-If you use AI SDK v5, refactor the `AssistantWidget.jsx` component to match the new API. For details on migrating to v5, see the [AI SDK migration guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0).
-
-## Setup
-
-1. Install dependencies:
+1. **Pick a directory** and install dependencies:
    ```bash
+   cd vite     # or  cd nextjs
    npm install
    ```
 
-2. Copy `.env.example` to `.env.local` and add your Mintlify assistant API token:
-   ```bash
-   cp .env.example .env.local
-   ```
-   Edit `.env.local` and replace `mint_dsc_your_token_here` with your actual token from the [Mintlify dashboard](https://dashboard.mintlify.com/settings/organization/api-keys).
+2. **Add your API token** in that directory:
+   - **Vite:** Copy `vite/.env.example` to `vite/.env`. Set `VITE_MINTLIFY_TOKEN=...`
+   - **Next.js:** Copy `nextjs/.env.example` to `nextjs/.env.local`. Set `NEXT_PUBLIC_MINTLIFY_TOKEN=...`
 
-3. Update `src/config.js` with your Mintlify project details:
-   - Replace `domain: 'your-domain'` with your project domain (the last part of your dashboard URL `https://dashboard.mintlify.com/org-name/your-domain`).
-   - Replace `docsURL: 'https://yourdocs.mintlify.app'` with your documentation site URL.
+3. **Set your project in config:** Edit `src/config.js` inside that directory. Set `domain` (your Mintlify project slug) and `docsURL` (your docs site URL).
 
-4. Start the development server:
+4. **Run the dev server:**
    ```bash
    npm run dev
    ```
+   Then open the URL shown in the terminal.
 
-5. Open the URL shown in your terminal (usually `http://localhost:3000`)
+## AI SDK version
 
-## Testing
+Both examples use Vercel AI SDK v4. If you move to AI SDK v5, the `useChat` API and message types change; see the [AI SDK migration guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0).
 
-1. Click the "Ask" button to open the assistant widget.
-2. Ask a question about your documentation.
-
-## Project structure
+## Repo structure
 
 ```
-src/
-├── app/
-│   ├── globals.css       # Global styles (Tailwind)
-│   ├── layout.jsx        # Root layout
-│   └── page.jsx          # Home page
-├── config.js             # Configuration (domain and docsURL)
-├── utils.js              # Helper functions for parsing suggestions and extracting sources
-└── components/
-    ├── AssistantWidget.jsx # Main widget component with chat state and API logic
-    └── Message.jsx         # Individual message component for rendering user and assistant messages
+vite/          # Vite + React example
+nextjs/        # Next.js App Router example
 ```
 
-## Key files to customize
-
-- **`src/config.js`** - Update your Mintlify project domain and documentation URL
-- **`src/components/AssistantWidget.jsx`** - Customize widget styling or behavior
-- **`.env.local`** - Add your assistant API token (not committed to git)
+Each directory is a full app with its own `package.json`, config, and `src/`. Use one at a time from its directory.
