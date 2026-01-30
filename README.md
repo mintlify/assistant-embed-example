@@ -23,6 +23,8 @@ See [Tutorial: Build an in-app documentation assistant](https://www.mintlify.com
    - **Vite:** Copy `vite/.env.example` to `vite/.env`. Set `VITE_MINTLIFY_TOKEN=...`
    - **Next.js:** Copy `nextjs/.env.example` to `nextjs/.env.local`. Set `NEXT_PUBLIC_MINTLIFY_TOKEN=...`
 
+   > Both `VITE_` and `NEXT_PUBLIC_` prefixed variables are bundled into client-side code and visible in the browser. The Mintlify assistant token is designed for client-side use.
+
 3. **Set your project in config:** Edit `src/config.js` inside that directory. Set `domain` (your Mintlify project slug) and `docsURL` (your docs site URL).
 
 4. **Run the dev server:**
