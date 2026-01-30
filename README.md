@@ -2,7 +2,7 @@
 
 Working examples of embedding the Mintlify assistant widget: one using **Vite**, one using **Next.js**. Each demonstrates how to integrate the assistant via the API.
 
-See [Tutorial: Build an in-app documentation assistant](https://wwww.mintlify.com/docs/guides/assistant-embed) for step-by-step instructions to embed and customize the widget.
+See [Tutorial: Build an in-app documentation assistant](https://www.mintlify.com/docs/guides/assistant-embed) for step-by-step instructions to embed and customize the widget.
 
 ## Choose an example
 
